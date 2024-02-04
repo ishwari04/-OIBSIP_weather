@@ -1,0 +1,125 @@
+<!--<html>
+  <div id="temperature-converter">
+    <input type="text" id="input-temperature" placeholder="Enter temperature here" oninput="validateInput(this)">
+    <select id="input-unit">
+      <option value="F">Fahrenheit</option>
+      <option value="C">Celsius</option>
+    </select>
+    <button id="convert-button" onclick="convertTemperature()">Convert</button>
+    <div id="output-message"></div>
+  </div>
+  
+  <script>
+    function validateInput(input) {
+      if (/[^\d.]/.test(input.value)) {
+        input.value = input.value.replace(/[^\d.]/g, '');
+      }
+    }
+  
+    function convertTemperature() {
+      const inputTemp = document.getElementById('input-temperature').value;
+      const inputUnit = document.getElementById('input-unit').value;
+      let outputTemp = null;
+      let outputUnit = null;
+  
+      if (inputUnit === 'F') {
+        outputTemp = (inputTemp - 32) * 5 / 9;
+        outputUnit = 'C';
+      } else if (inputUnit === 'C') {
+        outputTemp = (inputTemp * 9 / 5) + 32;
+        outputUnit = 'F';
+      }
+  
+      displayOutput(outputTemp, outputUnit);
+    }
+  
+    function displayOutput(outputTemp, outputUnit) {
+      const outputMessage = document.getElementById('output-message');
+      outputMessage.textContent = `Converted temperature: ${outputTemp} ${outputUnit}`;
+    }
+  </script>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      background-image:url('./wether.jpg') ;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #temperature-converter {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    #input-temperature {
+      width: 300px;
+      height: 50px;
+      font-size: 2rem;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 300px;
+      height: 50px;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="temperature-converter">
+    <input type="text" id="input-temperature" placeholder="Enter temperature here" oninput="validateInput(this)">
+    <select id="input-unit">
+      <option value="F">Fahrenheit</option>
+      <option value="C">Celsius</option>
+    </select>
+    <button id="convert-button" onclick="convertTemperature()">Convert</button>
+    <div id="output-message"></div>
+  </div>
+
+  <script>
+    function validateInput(input) {
+      if (/[^\d.]/.test(input.value)) {
+        input.value = input.value.replace(/[^\d.]/g, '');
+      }
+    }
+
+    function convertTemperature() {
+      const inputTemp = document.getElementById('input-temperature').value;
+      const inputUnit = document.getElementById('input-unit').value;
+      let outputTemp = null;
+      let outputUnit = null;
+
+      if (inputUnit === 'F') {
+        outputTemp = (inputTemp - 32) * 5 / 9;
+        outputUnit = 'C';
+      } else if (inputUnit === 'C') {
+        outputTemp = (inputTemp * 9 / 5) + 32;
+        outputUnit = 'F';
+      }
+
+      displayOutput(outputTemp, outputUnit);
+    }
+
+    function displayOutput(outputTemp, outputUnit) {
+      const outputMessage = document.getElementById('output-message');
+      outputMessage.textContent = `Converted temperature: ${outputTemp} ${outputUnit}`;
+    }
+  </script>
+</body>
+</html>
